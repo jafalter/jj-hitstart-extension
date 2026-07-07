@@ -1,0 +1,48 @@
+{
+  "_comment": "Chart/data sources and exclusion references. See PLAN.md §2, §10.2.",
+  "charts": {
+    "us_billboard": {
+      "type": "dataset",
+      "note": "Billboard Hot 100 year-end; ready JSON datasets. Starts 1958.",
+      "candidates": [
+        "https://github.com/mhollingshead/billboard-hot-100",
+        "https://github.com/utdata/rwd-billboard-data"
+      ]
+    },
+    "uk_official": {
+      "type": "scrape",
+      "note": "UK Official Charts back to 1952.",
+      "candidates": ["https://github.com/JackDanHollister/UkTop100Scrape"]
+    },
+    "de_offizielle": {
+      "type": "scrape",
+      "note": "Offizielle Deutsche Charts (chart-streak approach).",
+      "base": "https://www.offiziellecharts.de"
+    },
+    "at_austriancharts": {
+      "type": "scrape",
+      "note": "Ö3 / Austria Top 40 year-end by decade.",
+      "base": "https://austriancharts.at"
+    }
+  },
+  "enrichment": {
+    "deezer": {
+      "type": "api",
+      "note": "Free, no auth. Year/metadata/genre + track duration for chorus offset.",
+      "base": "https://api.deezer.com"
+    }
+  },
+  "exclusions": {
+    "_comment": "PRIMARY = scrape hitster.store DE. Spotify playlist IDs kept for reference only (Web API frozen for new apps).",
+    "primary": {
+      "type": "scrape",
+      "base": "https://www.hitster.store",
+      "market": "DE",
+      "decks": ["hitster-base", "hitster-rock"]
+    },
+    "spotify_reference_only": {
+      "hitster_base": "26zIHVncgI9HmHlgYWwnDi",
+      "hitster_rock": "4oYTRg0JI48jucsJOLily1"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_comment": "Friends' band pool — 1 forced pick each, exempt from genre/era/popularity rules but still exclusion-checked. Names only (inputs, not spoilers). See PLAN.md §6.",
+  "bands": [
+    "Bloodhound Gang",
+    "Einstürzende Neubauten",
+    "Agnes Obel",
+    "Queens of the Stone Age",
+    "Jonathan Coulton",
+    "Charles Mingus",
+    "Cypress Hill",
+    "Pink Floyd",
+    "Robbie Williams",
+    "Linkin Park",
+    "Nina Chuba",
+    "A Klana Indiana",
+    "Herbert Grönemeyer"
+  ]
+}

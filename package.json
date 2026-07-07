@@ -1,0 +1,26 @@
+{
+  "name": "jj-hitster-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DIY Hitster extension: build a duplex-printable deck of QR music cards.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "charts": "node --env-file=.env pipeline/01_charts.mjs",
+    "exclusions": "node --env-file=.env pipeline/02_exclusions.mjs",
+    "select": "node --env-file=.env pipeline/03_select.mjs",
+    "resolve": "node --env-file=.env pipeline/04_resolve.mjs",
+    "render": "node --env-file=.env pipeline/05_render.mjs",
+    "seal": "node --env-file=.env pipeline/06_seal.mjs",
+    "build": "npm run charts && npm run exclusions && npm run select && npm run resolve && npm run render && npm run seal",
+    "guard": "node pipeline/lib/spoiler-guard.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "qrcode": "^1.5.4",
+    "string-similarity": "^4.0.4",
+    "youtubei.js": "^10.5.0"
+  }
+}

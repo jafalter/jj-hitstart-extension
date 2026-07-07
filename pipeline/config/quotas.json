@@ -1,0 +1,29 @@
+{
+  "_comment": "Soft distribution targets. See PLAN.md §5. Numbers are tunable here (not in code). Friends' picks (13) are separate and NOT counted in these decade targets.",
+  "totalCards": 500,
+  "friendPicks": 13,
+  "generalTarget": 487,
+  "decades": {
+    "1950s": 30,
+    "1960s": 63,
+    "1970s": 65,
+    "1980s": 68,
+    "1990s": 68,
+    "2000s": 68,
+    "2010s": 68,
+    "2020s": 57
+  },
+  "region": {
+    "_comment": "Fraction of general pool per region. Rest is international.",
+    "austria": 0.10,
+    "germany": 0.10
+  },
+  "genres": {
+    "_comment": "Soft targets only; decade-aware availability handled in code (no Hip Hop in 1950s, Electronic mainly 1980s+, etc.). Unknown-genre well-known tracks are eligible.",
+    "targets": ["pop", "rock", "electronic", "hiphop"],
+    "electronicFromDecade": "1980s",
+    "hiphopFromDecade": "1980s"
+  },
+  "maxSongsPerArtist": 3,
+  "seed": 20260707
+}

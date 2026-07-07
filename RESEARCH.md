@@ -156,7 +156,7 @@ See the questions posed alongside this document. Summary of the big ones:
   classics / genre staples even if they didn't chart high.
 
 - QR platform: **YouTube** direct video links.
-- Friends' band pool: **12 artists** provided (1 song each → 12 of the ~500
+- Friends' band pool: **13 artists** provided (1 song each → 13 of the ~500
   reserved). List in §12.
 - Snippet start: **jump toward the chorus** (link opens near the recognizable part).
 
@@ -257,7 +257,7 @@ YouTube resolution + quality checks, the heuristic chorus offset, and the A4 /
 65 mm duplex PDF layout. (Selected songs will live only in generated data files,
 never echoed into docs, logs, or commits.)
 
-## 12. Friends' band pool (12 artists — 1 song each, reserved)
+## 12. Friends' band pool (13 artists — 1 song each, reserved)
 
 Band **names** are inputs, not spoilers, so they're recorded here; the specific
 song + year chosen per band is a spoiler and will **not** appear in any doc/log.
@@ -274,6 +274,7 @@ song + year chosen per band is a spoiler and will **not** appear in any doc/log.
 10. Linkin Park
 11. Nina Chuba
 12. A Klana Indiana
+13. Herbert Grönemeyer
 
 **Notes:**
 - These are **forced picks**, exempt from the genre/era/popularity rules — e.g.
@@ -284,4 +285,4 @@ song + year chosen per band is a spoiler and will **not** appear in any doc/log.
 - Still apply the **exclusion** check: if a forced artist already appears in the
   owned Hitster Classic/Rock decks, pick a *different* song by that artist not in
   those decks.
-- These 12 count toward the ~500 total.
+- These 13 count toward the ~500 total.
