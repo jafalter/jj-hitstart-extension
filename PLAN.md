@@ -23,7 +23,7 @@
 | Distribution | Roughly balanced soft quotas over decade × region × genre; **1950s under-weighted**. |
 | Region mix | **~10% Austria + ~10% Germany ≈ 20% German-language**, rest international. |
 | Chorus start | **Heuristic offset** (fixed fraction of track), no per-song work. |
-| Card count | **~500** total, incl. **13** reserved friends'-band picks. |
+| Card count | **~502** total, incl. **15** reserved friends'-band picks. |
 | Final songlist | **Encrypted + committed** (`/editions/*.enc`) so future editions can exclude past picks; plaintext stays git-ignored & never echoed. |
 
 ## 1. Repository layout
@@ -39,7 +39,7 @@
   lib/                 # normalize.mjs, match.mjs, quota.mjs, youtube.mjs, qr.mjs, crypto.mjs
   config/
     quotas.json        # decade × region × genre soft targets (NO songs)
-    friends.json       # 13 band names only (names are inputs, not spoilers)
+    friends.json       # 15 band names only (names are inputs, not spoilers)
     sources.json       # chart source URLs / years, Hitster playlist IDs
 /data                  # GENERATED, GIT-IGNORED (spoiler zone) — see §8
 /editions              # COMMITTED encrypted songlists (*.enc) — past editions' picks
@@ -120,7 +120,7 @@ song data or answer sheet is ever committed. `/editions/*.enc` **is** committed
 ## 3. Config (no songs, safe to commit)
 
 - `config/quotas.json` — the numeric allocation table (§5).
-- `config/friends.json` — the **13 band names** from RESEARCH §12 (names only).
+- `config/friends.json` — the **15 band names** from RESEARCH §12 (names only).
 - `config/sources.json` — chart source URLs, year ranges, Hitster playlist IDs.
 
 ## 4. Normalization & fuzzy matching (`lib/normalize.mjs`, `lib/match.mjs`)
@@ -163,12 +163,12 @@ artist** (e.g. ≤ 2–3) to spread variety; if a sub-bucket underfills (thin da
 only *counts* (never titles). Deterministic given a fixed seed.
 
 ## 6. Friends' bands (`config/friends.json`)
-- 13 band names (RESEARCH §12). For each: search resolved chart/catalog data (or
+- 15 band names (RESEARCH §12). For each: search resolved chart/catalog data (or
   Deezer) for that artist's best-known non-excluded track; pick 1.
 - **Forced & rule-exempt:** ignore genre/era/popularity constraints (covers jazz /
   Austrian mundart entries). Still apply **exclusion** — if the obvious song is in
   the owned decks, choose a different one by that artist.
-- Marked `isFriendPick: true`; counts toward the ~500.
+- Marked `isFriendPick: true`; counts toward the ~502.
 
 ## 7. Chorus-start heuristic (`lib/youtube.mjs`)
 - Rule: `startSeconds = clamp(round(0.40 * durationSec), 30, 75)` — ~40% in,
@@ -199,7 +199,7 @@ only *counts* (never titles). Deterministic given a fixed seed.
 ## 9. Print layout (`templates/card.typ`)
 - **Paper:** A4 (210 × 297 mm). **Card:** 65 × 65 mm square (matches Hitster).
 - **Grid:** 3 columns × 4 rows = **12 cards/sheet** (195 mm wide, 260 mm tall;
-  fits with ~7 mm side / ~18 mm top-bottom margins). ~500 cards → ~42 duplex sheets.
+  fits with ~7 mm side / ~18 mm top-bottom margins). ~502 cards → ~42 duplex sheets.
 - **Front sheet:** QR centered per cell, quiet zone preserved, error-correction
   **level Q** for print robustness; small card index in a corner for pairing.
 - **Back sheet:** **column order mirrored** (left↔right) so year/artist/title lands

@@ -1,7 +1,7 @@
 {
-  "_comment": "Soft distribution targets. See PLAN.md §5. Numbers are tunable here (not in code). Friends' picks (13) are separate and NOT counted in these decade targets.",
-  "totalCards": 500,
-  "friendPicks": 13,
+  "_comment": "Soft distribution targets. See PLAN.md §5. Numbers are tunable here (not in code). Friends' picks (15) are separate and NOT counted in these decade targets.",
+  "totalCards": 502,
+  "friendPicks": 15,
   "generalTarget": 487,
   "decades": {
     "1950s": 30,

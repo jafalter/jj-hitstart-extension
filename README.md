@@ -48,9 +48,15 @@ npm run seal        # 06 — encrypt final list -> editions/<name>.enc (commit t
 npm run build       # all six in order
 ```
 
-> Status: pipeline scaffold. Stages 01–05 are stubs pending live scraper/resolver
-> implementation; stage 06 (seal) and the shared libs (normalize/crypto/match/
-> youtube/qr) are functional.
+> Status: all six stages are implemented and have been run end to end.
+>
+> Chart sources: US (Billboard Hot 100 dataset) and AT (austriancharts.at) scrape
+> reliably. DE (germancharts.com) and UK (officialcharts.com) can be blocked on
+> networks that Cloudflare/WAFs flag as automated (both fail fast with a warning
+> instead of hanging — already-cached years are kept, so a re-run from an
+> unblocked network backfills them for free). `yt-dlp`/`typst` are auto-detected
+> even right after a fresh install (winget PATH updates need a shell restart to
+> propagate — the pipeline falls back to searching the winget package cache).
 
 ## Printing
 

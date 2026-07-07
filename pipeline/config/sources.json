@@ -3,26 +3,25 @@
   "charts": {
     "us_billboard": {
       "type": "dataset",
-      "note": "Billboard Hot 100 year-end; ready JSON datasets. Starts 1958.",
-      "candidates": [
-        "https://github.com/mhollingshead/billboard-hot-100",
-        "https://github.com/utdata/rwd-billboard-data"
-      ]
+      "note": "Billboard Hot 100 weekly data (1958+); aggregated into year-end points per year.",
+      "url": "https://raw.githubusercontent.com/mhollingshead/billboard-hot-100/main/all.json"
     },
     "uk_official": {
       "type": "scrape",
-      "note": "UK Official Charts back to 1952.",
-      "candidates": ["https://github.com/JackDanHollister/UkTop100Scrape"]
+      "note": "officialcharts.com — returns a Cloudflare JS challenge (403) from some networks; best-effort, degrades to 0 rows on failure.",
+      "base": "https://www.officialcharts.com"
     },
-    "de_offizielle": {
+    "de_germancharts": {
       "type": "scrape",
-      "note": "Offizielle Deutsche Charts (chart-streak approach).",
-      "base": "https://www.offiziellecharts.de"
+      "note": "Same Hung Medien chart engine as austriancharts.at (offiziellecharts.de blocks scraping with an Akamai WAF). Confirmed table layout: table.charts, cols [rank, _, artist a, title a].",
+      "base": "https://germancharts.com",
+      "yearUrl": "/year.asp?cat=s&id={year}"
     },
     "at_austriancharts": {
       "type": "scrape",
-      "note": "Ö3 / Austria Top 40 year-end by decade.",
-      "base": "https://austriancharts.at"
+      "note": "Ö3 / Austria Top 40 year-end by year. Confirmed reachable with UA + Accept-Language + Referer headers (plain 403 otherwise).",
+      "base": "https://austriancharts.at",
+      "yearUrl": "/year.asp?cat=s&id={year}"
     }
   },
   "enrichment": {
